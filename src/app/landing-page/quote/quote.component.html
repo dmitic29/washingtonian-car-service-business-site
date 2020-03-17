@@ -1,0 +1,36 @@
+<mat-toolbar color="accent" class="toolbar">
+  <mat-toolbar-row class="toolbar">
+  <span class="header"><h1>Get Quote</h1></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="card-quote">
+  <mat-card-title>Get Quote</mat-card-title>
+
+  <form [formGroup]="details" (ngSubmit)="saveQuote()">
+      <mat-form-field class="form">
+        <mat-label for="Name">Name</mat-label>
+        <input matInput id="Name" type="text" formControlName="Name"/>
+      </mat-form-field>
+    <br/>
+      <mat-form-field class="form">
+        <mat-label for="Phone">Phone</mat-label>
+        <input matInput id="Phone" type="tel" formControlName="Phone">
+      </mat-form-field>
+    <br/>
+      <mat-form-field class="form">
+        <mat-label for="Email">Email</mat-label>
+        <input matInput id="Email" type="email" formControlName="Email"/>
+      </mat-form-field>
+
+      <br/>
+      <mat-form-field class="form">
+        <mat-label for="About">How can we help you?</mat-label>
+        <textarea matInput id="About" placeholder="I need..." rows="2" formControlName="About"></textarea>
+      </mat-form-field>
+      <br/>
+      <button mat-flat-button [disabled]="!details.valid">Submit</button>
+</form>
+<p>
+  <a class="menuaction" routerLink="/.."><button mat-flat-button color="primary">Back</button></a>
+</mat-card>

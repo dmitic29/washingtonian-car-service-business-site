@@ -1,0 +1,62 @@
+<mat-drawer-container>
+  <mat-toolbar color="accent" class="toolbar">
+    <mat-toolbar-row class="toolbar">
+      <p><button mat-icon-button (click)="drawer.toggle(); toggleMenu()"><mat-icon>{{menuButton}}</mat-icon></button></p>
+    <span class="header"><h1>Washingtonian Luxury Car Service</h1></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-drawer closed #drawer mode="side" class="drawer">
+      <p><button (click)="scroll(aboutus)" mat-flat-button color="primary" class="menubutton">About Us</button></p>
+      <p><button (click)="scroll(gallery)" mat-flat-button color="primary" class="menubutton">Gallery</button></p>
+      <p><button (click)="scroll(contact)" mat-flat-button color="primary" class="menubutton">Contact</button></p>
+  </mat-drawer>
+  <div class="menuactioncontainer">
+    <a class="menuaction" routerLink="quote"><button mat-flat-button color="primary" >Get Quote</button></a>&nbsp;
+    <a class="menuaction" href="tel:+1-202-705-9535"><button mat-flat-button color="primary">Call Now</button></a>
+  </div>
+
+  <div class="maincontent">
+    <h1 class="title">WASHINGTONIAN LUXURY CAR SERVICE</h1>
+    <h1 class="title2">. . .</h1>
+    <div #aboutus class="view-container">
+      <mat-card class="card-content">
+        <mat-card-title>About Us</mat-card-title>
+        <mat-card-subtitle>Capable, Punctual, Professional.</mat-card-subtitle>
+        <p>
+          We are a private chauffeur company based in Washington D.C. Washington D.C. is well known as a fast-paced, business oriented location and we ensure that we can be the most reliable transportation partner in the business world, but also a family car service when needed.
+        </p>
+      </mat-card>
+    </div>
+    <h1 class="title2">. . .</h1>
+    <div #gallery class="view-container">
+      <mat-card class="card-content">
+        <mat-card-title>Gallery</mat-card-title>
+        <mat-card-subtitle>Our Luxury Vehicles and More.</mat-card-subtitle>
+        <button mat-icon-button><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-cadillac-escalade-001-1567021710.jpg?crop=0.481xw:0.568xh;0.309xw,0.432xh&resize=640:*" height="100%" width="100%">
+      </mat-card>
+    </div>
+    <h1 class="title2">. . .</h1>
+    <div #contact class="view-container">
+      <mat-card class="card-content">
+        <mat-card-title>Contact</mat-card-title>
+        <mat-card-subtitle>Give us a Call.</mat-card-subtitle>
+        <p class="contact">
+          <a class="menuaction" href="tel:+1-202-705-9535"><button mat-flat-button color="primary">(202) 705-9535</button></a>
+          <a class="menuaction" href="tel:+1-571-239-9339"><button mat-flat-button color="primary">(571) 239-9339</button></a>
+        </p>
+      </mat-card>
+    </div>
+
+  </div>
+</mat-drawer-container>
+
+
+
+
+
+
+
+
