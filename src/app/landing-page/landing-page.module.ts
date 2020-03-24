@@ -10,7 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { QuoteComponent } from './quote/quote.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const landingRoutes: Routes = [
   { path: '', component: LandingComponent },
@@ -29,6 +30,7 @@ const landingRoutes: Routes = [
     MatCardModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     RouterModule.forChild(landingRoutes)
   ]
 })

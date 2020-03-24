@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { QuoteInquiryService } from 'src/app/quote-inquiry.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quote',
@@ -7,9 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./quote.component.scss']
 })
 export class QuoteComponent {
+  submitClicked = false;
   details: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private qis: QuoteInquiryService, private router: Router) {
     this.details = fb.group({
       Name: ['', Validators.required],
       Phone: ['', Validators.required],
@@ -19,16 +22,15 @@ export class QuoteComponent {
   }
 
   saveQuote(): void {
-    console.log(this.details.value.Name);
-    console.log(this.details.value.Phone);
-    console.log(this.details.value.Email);
-    console.log(this.details.value.About);
-  }
-}
+    this.qis.getQuote({
+      name: this.details.value.Name,
+      phone: this.details.value.Phone,
+      email: this.details.value.Email,
+      about: this.details.value.About
+    });
 
-class Inquiry {
-  'name': string;
-  'phone': string;
-  'email': string;
-  'about': string;
+    setTimeout(() => {
+      this.router.navigate(['home']);
+    }, 2000);
+  }
 }

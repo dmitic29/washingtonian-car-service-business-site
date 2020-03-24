@@ -7,6 +7,7 @@
   </mat-toolbar>
 
   <mat-drawer closed #drawer mode="side" class="drawer">
+      <p><img class="logo" src="../../../assets/icon.jpg" width="80%" height="auto"></p>
       <p><button (click)="scroll(aboutus)" mat-flat-button color="primary" class="menubutton">About Us</button></p>
       <p><button (click)="scroll(gallery)" mat-flat-button color="primary" class="menubutton">Gallery</button></p>
       <p><button (click)="scroll(contact)" mat-flat-button color="primary" class="menubutton">Contact</button></p>
@@ -33,9 +34,9 @@
       <mat-card class="card-content">
         <mat-card-title>Gallery</mat-card-title>
         <mat-card-subtitle>Our Luxury Vehicles and More.</mat-card-subtitle>
-        <button mat-icon-button><mat-icon>keyboard_arrow_left</mat-icon></button>
-        <button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button>
-        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-cadillac-escalade-001-1567021710.jpg?crop=0.481xw:0.568xh;0.309xw,0.432xh&resize=640:*" height="100%" width="100%">
+        <button mat-icon-button (click)="browseImage(-1)"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-icon-button (click)="browseImage(1)"><mat-icon>keyboard_arrow_right</mat-icon></button>
+        <img [src]="currentImage" height="100%" width="100%">
       </mat-card>
     </div>
     <h1 class="title2">. . .</h1>

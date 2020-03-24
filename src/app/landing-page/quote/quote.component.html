@@ -7,20 +7,21 @@
 <mat-card class="card-quote">
   <mat-card-title>Get Quote</mat-card-title>
 
-  <form [formGroup]="details" (ngSubmit)="saveQuote()">
+  <ng-container *ngIf="!submitClicked">
+    <form [formGroup]="details" (ngSubmit)="saveQuote(); submitClicked=true">
       <mat-form-field class="form">
         <mat-label for="Name">Name</mat-label>
         <input matInput id="Name" type="text" formControlName="Name"/>
       </mat-form-field>
-    <br/>
+      <br/>
       <mat-form-field class="form">
         <mat-label for="Phone">Phone</mat-label>
         <input matInput id="Phone" type="tel" formControlName="Phone">
       </mat-form-field>
-    <br/>
+      <br/>
       <mat-form-field class="form">
         <mat-label for="Email">Email</mat-label>
-        <input matInput id="Email" type="email" formControlName="Email"/>
+        <input matInput id="Email" formControlName="Email"/>
       </mat-form-field>
 
       <br/>
@@ -29,8 +30,15 @@
         <textarea matInput id="About" placeholder="I need..." rows="2" formControlName="About"></textarea>
       </mat-form-field>
       <br/>
-      <button mat-flat-button [disabled]="!details.valid">Submit</button>
-</form>
-<p>
-  <a class="menuaction" routerLink="/.."><button mat-flat-button color="primary">Back</button></a>
+      <button mat-flat-button color="primary" [disabled]="!details.valid">Submit</button>
+    </form>
+  </ng-container>
+
+  <div class="form-bottom">
+    <a class="menuaction" routerLink="/.."><button mat-flat-button *ngIf="!submitClicked">Back</button></a>
+    <mat-spinner *ngIf="submitClicked"></mat-spinner>
+    <h4 *ngIf="submitClicked">Your Inquiry Was Sent!</h4>
+  </div>
+
 </mat-card>
+
