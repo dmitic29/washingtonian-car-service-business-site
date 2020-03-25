@@ -128,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "luxury-car-service"
+    }
+  },
+  "defaultProject": "luxury-car-service",
+  "cli": {
+    "analytics": false
+  }
 }
