@@ -196,3 +196,15 @@ mat-spinner {
   }
 }
 
+.gallery-image {
+  border-radius: 10px;
+  @media (min-width: 1024px) {
+    height: 80%;
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    height: 100%;
+    width: 100%;
+  }
+}
+
