@@ -24,7 +24,7 @@ export class QuoteInquiryService {
     Email.send({
       Host : 'smtp.elasticemail.com',
       Username : 'dimitrije.mitic29@gmail.com',
-      Password : '650F8F866848D224CC83AB9EA212453A5E6F',
+      Password : '4641EA073FDA3DC3F0DCBE70073B77B60838',
       To : 'bgvrabac1@gmail.com',
       From : `dimitrije.mitic29@gmail.com`,
       Subject : 'New Business Inquiry',
